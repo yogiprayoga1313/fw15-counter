@@ -1,43 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+import SetCount from './components/setCount'
 
 
-function app() {
-    const [count, setCount] = useState(0)
-    const [err, setErr] = useState('')
-    const handlePlus = () => {
-        if (count === 10) {
-            setErr("Max 10")
-        } else {
-            setErr("")
-            setCount(count + 1)
-        }
-
-    }
-    const handleMin = () => {
-        if (count === 0) {
-            setErr("Failed!")
-        } else {
-            setErr("")
-            setCount(count - 1)
-        }
-
-    }
+function App() {
     return (
         <div className="flex items-center justify-center h-screen ">
             <div className="flex-col text-black">
-                <div className="flex justify-center text-2xl">
-                    <h1>{count}</h1>
-                </div>
-                <div className='flex justify-center mt-2 text-red-700'>
-                    <h1>{err}</h1>
-                </div>
-                <div className="mt-5">
-                    <button className="btn btn-error m-4" onClick={handleMin}>-</button>
-                    <button className="btn btn-accent m-4" onClick={handlePlus}>+</button>
-                </div>
+               <SetCount/>
             </div>
         </div>
     )
 }
 
-export default app
+export default App
